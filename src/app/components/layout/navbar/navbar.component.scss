@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.4);
+  padding: 1em;
+  background-color: #2f9990;
+}
+
+.nav-element {
+  align-self: center;
+  h5 {
+    font-size: 25px;
+    margin: 0;
+    color: #212121;
+    border-color: black;
+  }
+}
+

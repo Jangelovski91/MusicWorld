@@ -1,0 +1,11 @@
+<div class="compare-container">
+  <div class="compare-item-container">
+    <app-artist-search (artistSelected)="firstArtistSelected($event)"></app-artist-search>
+    <app-artist-details *ngIf="firstArtist" [artistId]="firstArtist"></app-artist-details>
+  </div>
+  
+  <div class="compare-item-container">
+    <app-artist-search (artistSelected)="secondArtistSelected($event)"></app-artist-search>
+    <app-artist-details *ngIf="secondArtist" [artistId]="secondArtist"></app-artist-details>
+  </div>
+</div>

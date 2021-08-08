@@ -1,0 +1,16 @@
+<mat-card class="artist-card" *ngIf="artist">
+  <mat-card-header>
+    <div mat-card-avatar class="artist-header-image"
+      [ngStyle]="{'background-image': 'url(' + artist.image[0]['#text'] + ')'}"></div>
+    <mat-card-title class="artist-name">{{ artist.name }}</mat-card-title>
+    <mat-card-subtitle>
+      <a class="link-adress" [href]="artist.url" target="_blank">
+        {{ artist.url }}
+      </a>
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-actions>
+    <button mat-raised-button [routerLink]="'/artists/' + artist.name" class="details-btn">DETAILS</button>
+  </mat-card-actions>
+</mat-card>

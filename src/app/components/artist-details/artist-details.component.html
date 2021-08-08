@@ -1,0 +1,37 @@
+<section class="details-view">
+  <button mat-mini-fab color="primary" class="arrow-back" routerLink="/artists" *ngIf="!artistId">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <mat-spinner *ngIf="!artistInfoLoaded"></mat-spinner>
+
+  <div class="artist-card" *ngIf="artistInfo">
+    <div class="artist-info">
+      <h3><a [href]="artistInfo.url" target="_blank">{{ artistInfo.name }}</a></h3>
+      <div class="img-container">
+        <img [src]="artistInfo.image[2]['#text']" [alt]="artistInfo.name">
+      </div>
+
+      <p class="text-bold">Listeners: {{ artistInfo.stats.listeners }}</p>
+      <p class="text-bold">Plays: {{ artistInfo.stats.playcount }}</p>
+    </div>
+    <hr>
+    <div class="artist-tracks">
+      <h5>Top Tracks:</h5>
+      <mat-spinner *ngIf="!topTracksLoaded"></mat-spinner>
+      <p class="track-name" *ngFor="let track of artistTopTracks">
+        <img [src]="track.image[0]['#text']" />
+        {{ track.name }} &nbsp;&nbsp;|&nbsp;&nbsp; <span class="text-bold">{{ track.playcount }}</span>
+      </p>
+    </div>
+    <hr>
+    <div class="artist-albums">
+      <h5>Top Albums:</h5>
+      <mat-spinner *ngIf="!topAlbumsLoaded"></mat-spinner>
+      <p class="album-name" *ngFor="let album of artistTopAlbums">
+        <img [src]="album.image[0]['#text']" />
+        {{ album.name }} &nbsp;&nbsp;|&nbsp;&nbsp; <span class="text-bold">{{ album.playcount }}</span>
+      </p>
+    </div>
+  </div>
+</section>

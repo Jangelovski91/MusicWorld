@@ -1,0 +1,14 @@
+<mat-form-field class="form-field">
+  <mat-label>Select Country</mat-label>
+  <mat-select (selectionChange)="getArtistsByCountry($event.value)" [value]="listOfCountries[0].value">
+    <mat-option *ngFor="let country of listOfCountries" [value]="country.value">
+      {{ country.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<section class="artists-container">
+  <div class="artist-container" *ngFor="let artist of artists$ | async">
+    <app-artist-list-item [artist]="artist"></app-artist-list-item>
+  </div>
+</section>

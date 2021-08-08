@@ -1,0 +1,16 @@
+.artists-container {
+  margin: 2rem 5rem 0 5rem;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 1rem;
+
+  .artist-container {
+    margin-bottom: 100px;
+  }
+}
+
+.form-field {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
